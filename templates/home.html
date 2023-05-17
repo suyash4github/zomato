@@ -1,0 +1,138 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Zomato Delivery Time  Indicator</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Zomato Delivery Time Prediction</legend>
+        </h1>
+        <div class="mb-3">
+            <label class="form-label">Traffic Density</label>
+            <select class="form-control" name="Road_traffic_density" placeholder="Enter your Trafficdensity" required>
+                <option class="placeholder" selected disabled value="">Select your Traffic Density</option>
+                <option value="Low">
+                    Low
+                </option>
+                <option value="Jam">
+                    Jam
+                </option>
+                <option value="High">
+                    High
+                </option>
+                <option value="Medium">
+                    Medium
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Type_of_vehicle</label>
+            <select class="form-control" name="Type_of_vehicle" placeholder="Enter you Type_of_vehicle" required>
+                <option class="placeholder" selected disabled value="">Select Type_of_vehicle</option>
+                <option value="motorcycle">
+                    motorcycle
+                </option>
+                <option value="scooter">
+                    scooter
+                </option>
+                <option value="electric_scooter">
+                    electric_scooter
+                </option>
+                <option value="bicycle">
+                    bicycle
+                </option>
+                
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Weather conditions</label>
+            <select class="form-control" name="Weather_conditions"
+                placeholder="Enter you  Weather" required>
+                <option class="placeholder" selected disabled value="">Select Weather conditions</option>
+                <option value="Fog">
+                    Fog
+                </option>
+                <option value="Stormy">
+                    Stormy
+                </option>
+                <option value="Cloudy">
+                    Cloudy
+                </option>
+                <option value="Sandstorms">
+                    Sandstorms
+                </option>
+                <option value="Windy">
+                    Windy
+                </option>
+                <option value="Sunny">
+                    Sunny
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Festival</label>
+            <select class="form-control" name="Festival" placeholder="Enter you Festival" required>
+                <option class="placeholder" selected disabled value="">Select Festival Type</option>
+                <option value="No">
+                    No
+                </option>
+                <option value="Yes">
+                    Yes
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">City</label>
+            <select class="form-control" name="City" placeholder="Enter you City"
+                required>
+                <option class="placeholder" selected disabled value="">Select City</option>
+                <option value="Metropolitian">
+                    Metropolitian
+                </option>
+                <option value="Urban">
+                    Urban
+                </option>
+                <option value="Semi-Urban">
+                    Semi-Urban
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Delivery_person_Age</label>
+            <input class="form-control" type="text" name="Delivery_person_Age"
+                placeholder="Enter your age" min='0' max='100' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Delivery_person_Ratings</label>
+            <input class="form-control" type="text" name="Delivery_person_Ratings"
+                placeholder="Enter your Rating" min='0' max='10' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Vehicle_condition</label>
+            <input class="form-control" type="text" name="Vehicle_condition"
+                placeholder="Enter your Condition" min='0' max='3' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">multiple_deliveries</label>
+            <input class="form-control" type="text" name="multiple_deliveries"
+                placeholder="Enter your Condition" min='0.0' max='3.0' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">preparation_time </label>
+            <input class="form-control" type="text" name="preparation_time"
+                placeholder="Enter your Time" min='0' max='25' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Restaurant_Delivery_distance</label>
+            <input class="form-control" type="text" name="Restaurant_Delivery_distance"
+                placeholder="Enter your distance" min='0' max='30' />
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict your Time" required />
+        </div>
+    </form>
+    <h2>
+       THE  prediction is {{results}}
+    </h2>
+   <body>
+</html>
